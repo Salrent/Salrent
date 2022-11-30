@@ -120,6 +120,5 @@ if(isset($_POST['signup'])){
 
     if(isset($_POST['login-now'])){
         header('Location: login-user.php');
-    }    
-
+    }
 ?>
