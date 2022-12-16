@@ -1,0 +1,116 @@
+html{
+    padding: 0;
+}
+  
+  body {
+    font-family: helvetica, arial, sans-serif;
+    background-color: rgb(196, 188, 235);
+    padding: 0;
+    margin: 0;
+    background-image: url("zdj1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+header{
+    display: flex;
+    width: 100%;
+    height: 125px;
+    background-color: rgb(14, 187, 255);;
+}
+
+table{
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    width: 25%;
+    font-size: 25px;
+    letter-spacing: 1px;
+    border-collapse: collapse;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+    text-underline-offset: 4px;
+        text-shadow: 1px 1px 2px black, 0 0 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0);
+}
+
+header a:hover{
+    font-size: 30px;
+}
+
+.active{
+    color: darkblue;
+    text-decoration: underline overline;
+            text-shadow: 1px 1px 2px black, 0 0 1em rgb(0, 0, 0);
+}
+
+.blok{
+    background-color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10%;
+    height: auto;
+    border-radius: 25px;
+    border: 2px solid skyblue;
+    padding: 20px;
+    opacity: 85%;
+}
+
+footer{
+    width: 100%;
+    position: sticky;
+    background-color: rgb(75, 75, 240);
+    height: 50px;
+    text-align: center;
+    padding: 2px;
+    bottom: 0;
+    top: 100;
+}
+
+p{
+
+    color: gold;
+    font-weight: 555;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0);
+}
+
+.zdjlewo{
+float: left;
+width: 30%;
+height: 30%;
+}
+
+.zdjprawo{
+    float: right;
+    width: 30%;
+    height: 30%;
+}
+
+.panel{
+    width: 14%;
+    float: left;
+    position: sticky;
+    background-color: white;
+    height: 500px;
+    bottom: 50px;
+    top: 125px;
+    border-radius: 25px;
+    border: 1px solid skyblue;
+    opacity: 85%;
+}
+
+button{
+    float: right;
+    margin-top: 470px;
+    margin-right: 25px;
+}
+
+button a{
+    text-decoration: none;
+    color: black;
+}
