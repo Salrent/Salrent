@@ -1,0 +1,71 @@
+#mainNavigation a {
+    font-family: 'Cabin', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+  }
+  
+  .dropdown-menu {
+    background: #03727d;
+  }
+  
+  a.dropdown-toggle {
+    color: #ffffff !important
+  }
+  
+  a.dropdown-item:hover {
+    color: #f50000 !important
+  }
+  
+  .nav-item a {
+    color: #ffffff;
+  } 
+
+  .nav-item a:hover {
+    color: rgba(0, 0, 0);
+  }
+
+  .dropdown-menu a{
+    color: #000000;
+  }
+  
+  .nav-item {
+    min-width: 12vw;
+  }
+  
+  #mainNavigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 123;
+    padding-bottom: 10px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+    /* IE6-9 */
+  }
+  
+  #navbarNavDropdown.collapsing .navbar-nav,
+  #navbarNavDropdown.show .navbar-nav {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    opacity: 85%;
+  }
+  
+  .align-middle {
+    color: rgb(0, 0, 0);
+    border-color: rgba(255, 255, 255, .2);
+    font-weight: bold;
+  }
+  .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
+    color: rgb(235, 59, 15)!important;
+    text-decoration: underline;
+  }
