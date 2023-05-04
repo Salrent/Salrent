@@ -1,0 +1,2035 @@
+{
+  "id": "df06d396-c766-454d-b385-0517c39c62ba",
+  "version": "2.0",
+  "name": "Salrent",
+  "url": "http://localhost/salrent/login-user.php",
+  "tests": [{
+    "id": "5ffcb549-f36c-46ab-b432-822179ffaeb1",
+    "name": "zmiana_hasła_puste_pola",
+    "commands": [{
+      "id": "b4f2651a-00b2-4646-8b69-c039cb05a124",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0aa35eb-85e5-4d05-9012-a32ff2f4ba57",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1038x743",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "084b467f-d660-411d-a62c-19c7b434cfd1",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "66d27fd2-89b4-4edf-895b-d678726af4fb",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "f2dc518d-695d-47c8-bf1b-0144ec82e022",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3045ebc-ccc0-4999-a53b-b81600cd9422",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "0842f174-0e10-44a8-861f-ac02d0ba571f",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c25125a1-e641-4878-8489-4f54102ea84a",
+      "comment": "",
+      "command": "click",
+      "target": "id=sidebarCollapse",
+      "targets": [
+        ["id=sidebarCollapse", "id"],
+        ["css=#sidebarCollapse", "css:finder"],
+        ["xpath=//button[@id='sidebarCollapse']", "xpath:attributes"],
+        ["xpath=//nav[@id='sidebar']/div/button", "xpath:idRelative"],
+        ["xpath=//nav/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a510c07-8f66-4c36-9539-e28b9c9b86af",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a2fbc64-d509-4169-9363-7e3e9e9e0f78",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d3024f3b-0faa-4f78-8822-12b95adb949c",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35e04af0-edcf-4e9e-96bd-741c9a7cba37",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "Jesteś pewny że chcesz zmienić swoje hasło?",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "c1b44457-8bc3-4ccd-abbd-30e58c289f27",
+    "name": "zmiana_hasła_current_password_incorrect",
+    "commands": [{
+      "id": "37df41dd-3ad1-4eee-bd5f-a8872aa281e5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e7ef3085-ef6f-4d09-aee7-62d8af873528",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1038x743",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c9290ed7-4a28-44e3-af53-6fa7719019f1",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "711a5765-86d5-4947-90f3-a651c2a4fb58",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "2ac0df9a-2844-4293-9e9e-9965e5f7233a",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "655f7791-dfdc-4046-952d-2e457d9677e8",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "b9b12d18-70d5-4931-951a-b335ddf63bbf",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4b30fb3-477a-4950-b101-6d4cfe5e4238",
+      "comment": "",
+      "command": "click",
+      "target": "id=sidebarCollapse",
+      "targets": [
+        ["id=sidebarCollapse", "id"],
+        ["css=#sidebarCollapse", "css:finder"],
+        ["xpath=//button[@id='sidebarCollapse']", "xpath:attributes"],
+        ["xpath=//nav[@id='sidebar']/div/button", "xpath:idRelative"],
+        ["xpath=//nav/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "99ead166-774a-436c-9908-ab73dea99d8e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2faca67-ef4d-4331-bc30-71156a501dd3",
+      "comment": "",
+      "command": "click",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8180b452-edce-4800-b018-4455f912d87f",
+      "comment": "",
+      "command": "type",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty123"
+    }, {
+      "id": "e67e2aae-c42b-49eb-aad5-76613c78e199",
+      "comment": "",
+      "command": "type",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty!234"
+    }, {
+      "id": "8c08d3c0-5585-481d-b611-8fb92be3c722",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": "Qwerty!234"
+    }, {
+      "id": "21c7537f-bd32-4057-a999-0c7682554148",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6206756e-a28e-4fb1-8a1a-c1ffc3c04d9e",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bab9b619-9d8c-42eb-8fae-74ecc6ee4c77",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "Jesteś pewny że chcesz zmienić swoje hasło?",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "2c4c4e9c-f11c-4306-9f62-33af37ffe3c9",
+    "name": "zmiana_hasła_poprawna_zmiana_hasła",
+    "commands": [{
+      "id": "f3276743-fed8-42d3-8f2c-ca28ce6a9e59",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "28b1f4ec-08ca-4699-b299-e473cf083ee7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1038x743",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c3371aba-bed7-4447-b7cc-3fe310e0338f",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "00afdaa5-96b4-4e1a-8e87-22a6ef06e303",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "ffd7d20e-60ca-4c34-91fe-51fb055a46c8",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c7aed29-110f-4967-bc32-2672ab0f7a93",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "3a131a1d-1a10-4b10-9894-26c1f1fca6ba",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "3d368da7-51e4-4b81-b66e-f43b30503cd1",
+      "comment": "",
+      "command": "click",
+      "target": "id=sidebarCollapse",
+      "targets": [
+        ["id=sidebarCollapse", "id"],
+        ["css=#sidebarCollapse", "css:finder"],
+        ["xpath=//button[@id='sidebarCollapse']", "xpath:attributes"],
+        ["xpath=//nav[@id='sidebar']/div/button", "xpath:idRelative"],
+        ["xpath=//nav/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6262f8a8-4f14-47fc-bb70-7142c2a1ea44",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "51a7701c-c893-4411-aae4-6f7d7a6ac1e2",
+      "comment": "",
+      "command": "click",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "72f253f8-a65e-4bd4-bfc7-41470a7e20bb",
+      "comment": "",
+      "command": "type",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "5c1e5bb4-301e-43bc-9143-1c8ec8e1f6ea",
+      "comment": "",
+      "command": "type",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty!234"
+    }, {
+      "id": "a6d7ad25-30aa-43cb-8e48-37bbd1aaf241",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": "Qwerty!234"
+    }, {
+      "id": "021cbdc7-8424-4cf7-afbd-7e03af6b8274",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c7eec8b-e78d-4333-947f-5d43e7d6d333",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d91a9a1-0f8a-4511-82e6-298e89aa57d1",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "Jesteś pewny że chcesz zmienić swoje hasło?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e390576f-7c20-47de-b3e8-4f6fd8955c64",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4013c4f4-5214-49d3-9b33-6458ab29a755",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e593eeb3-ddf7-40e2-bf95-a496a453f5cf",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "2729d2ed-4e55-4b91-a92e-8f10b1475cd2",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "699d025c-b950-4a7e-8d60-cb36b1fde96d",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!234"
+    }, {
+      "id": "d01f7f82-d9b5-443f-9bbc-29f5ed82bc4d",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d763a639-efcd-495a-9871-8c8a7d6c4cb4",
+    "name": "zmiana_hasła_current_password_blank",
+    "commands": [{
+      "id": "997a9e52-05d9-4183-9ec5-62dd6d60be0d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2bf76837-dcef-4893-8ad1-c5702af86e0a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1038x743",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b6c20bb4-ad27-4aee-bbfa-679f7fa671c1",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7bb4efc7-9d55-4abd-97f6-98015cfee55c",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "1b6ba0f2-5758-4818-8413-5e6cfddee936",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ac038cc-15d0-40e5-a543-745999b76b58",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "eb17a578-0cfb-4475-8214-4c0114f0d257",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "3e99622e-731f-4c40-830c-176ee6db36e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=sidebarCollapse",
+      "targets": [
+        ["id=sidebarCollapse", "id"],
+        ["css=#sidebarCollapse", "css:finder"],
+        ["xpath=//button[@id='sidebarCollapse']", "xpath:attributes"],
+        ["xpath=//nav[@id='sidebar']/div/button", "xpath:idRelative"],
+        ["xpath=//nav/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d43a35e7-3493-4e81-aabf-cddbc4a69e81",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "455225db-5567-4ea4-aef4-c9f908743f4f",
+      "comment": "",
+      "command": "click",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37417fd8-72ce-42cc-8f41-8082c492c738",
+      "comment": "",
+      "command": "type",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty!234"
+    }, {
+      "id": "ec6bb061-2623-467b-81c0-d11b66877386",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": "Qwerty!234"
+    }, {
+      "id": "72b4d81a-1068-4f2e-9bcf-e13035b5942f",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "684967fd-8423-4375-a38d-a3102b54efb9",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d829b414-9294-4811-82bb-a8eb97cf46ee",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "Jesteś pewny że chcesz zmienić swoje hasło?",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "de546fc1-545d-4ba4-831b-bba00eb41977",
+    "name": "zmiana_hasła_new_password_blank",
+    "commands": [{
+      "id": "61c9641e-2515-4112-8756-6e864bf1a271",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "31a36e49-f51e-4a23-8990-eb7de16d2a1e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1038x743",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45f95e25-645a-494f-95c7-b3d03b73633c",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aabc0392-0871-4ed5-aca5-822daf984b1a",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "722f9678-b5db-4053-a8ff-a12e6aa161fc",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fdb772fc-fdcc-49ef-8997-06d04a899788",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "7d634beb-aed9-4fe9-b6b0-c9e2bc0a9812",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "48ba4e4c-29c1-4ff5-9c0d-03148b7ce416",
+      "comment": "",
+      "command": "click",
+      "target": "id=sidebarCollapse",
+      "targets": [
+        ["id=sidebarCollapse", "id"],
+        ["css=#sidebarCollapse", "css:finder"],
+        ["xpath=//button[@id='sidebarCollapse']", "xpath:attributes"],
+        ["xpath=//nav[@id='sidebar']/div/button", "xpath:idRelative"],
+        ["xpath=//nav/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53eeddb2-95a8-41e0-a94c-6de735ad8148",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "10c363f0-9d2b-454e-9e86-3ef9022ee6d6",
+      "comment": "",
+      "command": "click",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbc99c41-99b5-4eab-8cf6-628ce19d89ae",
+      "comment": "",
+      "command": "type",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "d4180dcd-a256-40be-91b5-7884ec505b49",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "Jesteś pewny że chcesz zmienić swoje hasło?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3415648d-44ce-4ba4-9dd3-7db2521ddcae",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0df771b7-f92f-4ae0-8838-38904cce581a",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "ac8ea58b-aa55-48e4-94f0-9e2fefdb59ff",
+    "name": "zmiana_hasła_new_password_different",
+    "commands": [{
+      "id": "319c0385-e9ba-46e6-9fbc-615dc9ca9723",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dfcc669d-a41e-4973-a2d7-174cc1b128dd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1038x743",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5a1546ca-3692-4c5d-8331-abdcdae66c0a",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98032a13-3ea5-46dc-a9ea-89bc7689091e",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "d6c90362-4fed-496a-9d59-19dc1a7db287",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "545587a3-2ec1-47ec-a1dd-285041614870",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "e50bb58f-2dbe-4929-aba3-b65f3b2167ed",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd3308c8-8e11-4a59-94de-ee40465f1163",
+      "comment": "",
+      "command": "click",
+      "target": "id=sidebarCollapse",
+      "targets": [
+        ["id=sidebarCollapse", "id"],
+        ["css=#sidebarCollapse", "css:finder"],
+        ["xpath=//button[@id='sidebarCollapse']", "xpath:attributes"],
+        ["xpath=//nav[@id='sidebar']/div/button", "xpath:idRelative"],
+        ["xpath=//nav/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc91f55a-1c7f-45a2-9ed2-1323d0c3ed8e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec0469df-5b49-4639-8f12-2de56e54f676",
+      "comment": "",
+      "command": "click",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6eab0e9e-a3d5-4c01-ab08-6c08195a0224",
+      "comment": "",
+      "command": "type",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "642a0a02-2137-49d3-be07-18131449c07e",
+      "comment": "",
+      "command": "type",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty!234"
+    }, {
+      "id": "88724329-f245-4512-9039-b22040ccd17c",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": "Qwerty!2345"
+    }, {
+      "id": "7a7fc296-9747-4c71-909d-20297d06ee96",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f0dd880e-6c72-419c-9ade-1ee796acc42b",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "48e90469-67bf-4908-a2f0-6f5d8ea2c5ad",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "abfe1402-34fd-4b8a-a8ac-7a7b37d5c1f7",
+    "name": "zmiana_hasła_new_password_no_special_character",
+    "commands": [{
+      "id": "bcd1530b-c617-4964-ae6b-c6dfb378af5b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d116dae-4030-497f-a3bc-9514f4422a61",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1557x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd3127e5-b635-409f-9561-6163dfba79b1",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d49e83f-e9da-4a8c-abae-a65dfcb302c4",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "a56bfd20-a4e9-440e-8b22-0a4963d52b3b",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f088d3d-8dbf-4b57-a7bc-81b1593f6d17",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "c4b49065-6bbf-451f-9e8f-1a8bbdd24ee7",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6c76964-81ba-4927-821e-a42298acce50",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d18b6734-8eb1-4021-b338-f585aa5b28fb",
+      "comment": "",
+      "command": "click",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "930d3519-0369-4959-aa7c-f7a092897ed5",
+      "comment": "",
+      "command": "type",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "7fd1a519-e71a-4e2a-b9a6-9456d2afa55c",
+      "comment": "",
+      "command": "type",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty1234"
+    }, {
+      "id": "9fe10a50-43ef-4cde-a462-b009310b9241",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": "Qwerty1234"
+    }, {
+      "id": "b690beff-091c-40e1-8c6f-32383657fa82",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "Jesteś pewny że chcesz zmienić swoje hasło?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4e985597-4117-4e2f-81dd-8b46445459b4",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "570e50b8-6e23-4bf0-9f69-ebaaced67ed2",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "29a10b63-0c63-4861-901e-30385f999d6e",
+    "name": "zmiana_hasła_new_password_no_number",
+    "commands": [{
+      "id": "882790a6-3266-4fbd-a2cc-f30a9aa5e298",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b19edf2-f4d8-4335-893a-2baa9b9fb08c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1575x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eeaba05d-1d09-4b5a-b40b-02d28ba97ba8",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "230eb152-ad6a-4913-a76a-9f746da05f1a",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "78bcff1e-3991-4653-85fe-07a9c2b52cfb",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ef0725d-3a64-48be-a7df-34c18b0b0557",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "f0775527-97de-49e8-bc23-971d97685594",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c877d2a1-1e0a-4c17-997c-ed1569e476bc",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "57ef71c2-f9d0-42e8-b440-46ed19ed2e23",
+      "comment": "",
+      "command": "click",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0645fbc6-ce31-43d5-981c-cf761b692fb5",
+      "comment": "",
+      "command": "type",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "dec50964-404b-4a78-a932-60d7b762c365",
+      "comment": "",
+      "command": "type",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": "Qqqwerty!"
+    }, {
+      "id": "f36bb5b0-efb8-4224-994b-f8af1c118abb",
+      "comment": "",
+      "command": "click",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b16c56a4-6dc1-4289-a1fe-e6701bdfd0da",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": "Qqqwerty!"
+    }, {
+      "id": "5fe27dc3-c8c5-4930-9e73-a24055beaa95",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "Jesteś pewny że chcesz zmienić swoje hasło?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ff0825d5-67f1-4ad9-9150-1250a15a8184",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9dcf0d7e-5b71-493e-b7ca-36e9e1a2fc69",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "688f6d55-7cad-454f-b463-9ad42d7c0672",
+    "name": "zmiana_hasła_new_password_no_big_letters",
+    "commands": [{
+      "id": "677609f3-9c18-4fc3-8e41-fc7e3a561aa7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f9ad2277-82d7-4555-9c4d-c645356b9f3d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1575x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7af2f1fe-8e44-423c-bdc4-4eab4ec609ae",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc1bc9d3-b2f0-490c-bce5-78d673f5a853",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "e56ee278-241a-4e49-a760-4fc56d1d37eb",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ec8f1e7-27b5-4453-97f7-1c558210b386",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "5374bf9b-e57a-4257-a481-07954aae2993",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3f3dae5-2f0c-469a-a10a-4dc81283ea57",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "282ce311-7283-4100-84ac-d0a0ef94c07d",
+      "comment": "",
+      "command": "click",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "884ba85e-b17a-4968-8066-0ed6af8de76b",
+      "comment": "",
+      "command": "type",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "1737417b-25b9-4549-a32a-85d3283a81e8",
+      "comment": "",
+      "command": "click",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5eb0bc5e-8c27-48b5-b246-7c46192f02ed",
+      "comment": "",
+      "command": "type",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": "qwerty!234"
+    }, {
+      "id": "3f405df9-e466-41ea-862c-09c8ac39d52c",
+      "comment": "",
+      "command": "click",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6cdfcb73-6da1-4852-9e0c-124da6eb2688",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": "qwerty!234"
+    }, {
+      "id": "3c9376f5-56c6-492d-8798-29d6dc06a4ed",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "Jesteś pewny że chcesz zmienić swoje hasło?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "646d7790-aacf-4739-aeda-3b09feeff05e",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa986d9d-7e25-40b6-8b9e-665140a3e56c",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "cbb11c68-2a80-49c8-a6fa-e5ac78a7f0b0",
+    "name": "zmiana_hasła_new_password_too_short",
+    "commands": [{
+      "id": "64ce7f4d-dbb2-460a-adcc-a903a856837e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f85b28d-26e8-44b9-9087-df3d6a8d98f4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1575x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cdc6e14d-18b0-44a1-a5fb-877fc61fbd45",
+      "comment": "",
+      "command": "click",
+      "target": "css=form",
+      "targets": [
+        ["css=form", "css:finder"],
+        ["xpath=//form[@action='login-user.php']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1bf02a2b-945b-4440-a5d1-1093c0986780",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "df05cf17-576d-4bf9-b2d3-9cca170cb889",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "5592986a-5611-401e-b1b6-5024fb233742",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f11674b-d2da-41dc-be1c-0bb39b788f14",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "18becfed-2036-45aa-9db3-af1be086432f",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "297ff9c3-cfd9-4d5d-ae6b-98f971547f84",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ef8b65c-9274-4b04-a1e4-b0672c5d107e",
+      "comment": "",
+      "command": "click",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab393e2f-b9e5-4faa-84e0-4f9cd71a769c",
+      "comment": "",
+      "command": "type",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "703974e3-5040-4a1f-abc8-e62aede714ea",
+      "comment": "",
+      "command": "click",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "512ae31d-3a19-4e71-9087-23be26ef0ff9",
+      "comment": "",
+      "command": "type",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": "Qwer!2"
+    }, {
+      "id": "a2a7f950-6f12-4a73-af62-a73eb00580bf",
+      "comment": "",
+      "command": "click",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd0f92f2-db2c-4a82-90e0-26961e51b816",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": "Qwer!2"
+    }, {
+      "id": "e6172c49-a757-4f25-b0c5-ab9c215b2d75",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "Jesteś pewny że chcesz zmienić swoje hasło?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2cc0ad4d-618d-4a9d-81e5-3bec3dda1a05",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d56d5a80-2f6c-48a6-aa7d-551955d5810b",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7de14ab7-61d5-427e-80de-f3f62d4a84fc",
+    "name": "zmiana_hasła_anuluj",
+    "commands": [{
+      "id": "56b31153-bfdf-4aa3-88c7-80eb7fdf744a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/salrent/login-user.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d842254-eea2-4bac-be5a-86c01c9c1297",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1575x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "311359a4-c6a0-42c6-9c60-042abdbc5b03",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "df044cdb-03de-47f4-93a9-b29127f57f3e",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test1@wp.pl"
+    }, {
+      "id": "2daa56b0-2041-4991-897a-c277e36c5b77",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "870d6c5a-7c67-41e3-b62a-fff6a7a7b306",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.form-group:nth-child(4) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "7c84b842-c9aa-4d50-858b-afb972c8d843",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e845dcbb-f716-47c6-87c9-70c2f3e17f4e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ustawienia",
+      "targets": [
+        ["linkText=Ustawienia", "linkText"],
+        ["css=.marine > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ustawienia')]", "xpath:link"],
+        ["xpath=//nav[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'ustawienia-konta.php')]", "xpath:href"],
+        ["xpath=//nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Ustawienia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ad1b869-8323-4232-989d-4c342c478f3c",
+      "comment": "",
+      "command": "click",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f53d41f6-d6e6-4ace-8edd-d2d34a525b36",
+      "comment": "",
+      "command": "type",
+      "target": "id=current_password",
+      "targets": [
+        ["id=current_password", "id"],
+        ["name=current_password", "name"],
+        ["css=#current_password", "css:finder"],
+        ["xpath=//input[@id='current_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input", "xpath:position"]
+      ],
+      "value": "Qwerty!23"
+    }, {
+      "id": "f17fd7f7-7196-4f31-bccc-e6b76c7fc857",
+      "comment": "",
+      "command": "type",
+      "target": "id=new_password",
+      "targets": [
+        ["id=new_password", "id"],
+        ["name=new_password", "name"],
+        ["css=#new_password", "css:finder"],
+        ["xpath=//input[@id='new_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[2]", "xpath:position"]
+      ],
+      "value": "Qwerty!234"
+    }, {
+      "id": "9e277338-142e-4f02-a7cc-41d218210622",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[3]", "xpath:position"]
+      ],
+      "value": "Qwerty!234"
+    }, {
+      "id": "dae1ae39-60e5-40b4-a621-7319d84b7dda",
+      "comment": "",
+      "command": "chooseCancelOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2245030-a901-43f5-937d-0e4b78d5c72a",
+      "comment": "",
+      "command": "click",
+      "target": "name=zmienhaslo",
+      "targets": [
+        ["name=zmienhaslo", "name"],
+        ["css=.zmienhaslo:nth-child(11)", "css:finder"],
+        ["xpath=//input[@name='zmienhaslo']", "xpath:attributes"],
+        ["xpath=//form[2]/div/input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f206ace-b092-424c-9e0f-e8176e53b566",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Jesteś pewny że chcesz zmienić swoje hasło?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c99a98b-9e7d-480e-9824-6364493e5d96",
+      "comment": "",
+      "command": "webdriverChooseCancelOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ae6ec7a0-fa18-4830-a68c-a40985692c5e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost/", "http://localhost/salrent/login-user.php"],
+  "plugins": []
+}
