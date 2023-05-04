@@ -1,0 +1,110 @@
+html {
+  padding: 0;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  background-color: rgb(196, 188, 235);
+  padding: 0;
+  margin: 0;
+  background-image: url("zdjecia/tlo.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.blok {
+  background-color: white;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 10%;
+  height: auto;
+  border-radius: 25px;
+  border: 2px solid skyblue;
+  padding: 20px;
+  opacity: 85%;
+}
+
+.zdjlewo {
+  float: left;
+  width: 30%;
+  height: 30%;
+}
+
+.zdjprawo {
+  float: right;
+  width: 30%;
+  height: 30%;
+}
+
+A {
+  text-decoration: none;
+  color: black;
+}
+
+.deletee {
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+}
+
+.delete {
+  font-weight: bold;
+  font-size: 15px;
+  width: 125px;
+}
+
+.formularz .tescik{
+  text-align: center;
+  font-size: 15px;
+  width: 125px;
+}
+.formularz{
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+}
+.formularz .aktualizuj{
+  font-size: 15px;
+  width: 125px;
+  font-weight: bold;
+}
+
+.formularz .zmienhaslo{
+  font-size: 15px;
+  width: 125px;
+  font-weight: bold;
+}
+
+.blok h5{
+  font-size: 18px;
+}
+
+.blok .imief{
+  margin-left: 27%;
+}
+
+.blok .nazwiskof{
+  margin-left: 15%;
+}
+
+.daneuzytkownika{
+  margin-left: 41.5%;
+  margin-right: auto;
+  width: 11em;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.zmianahasla{
+  margin-left: 43.5%;
+  margin-right: auto;
+  width: 11em;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.blok .miastof{
+  margin-left: 22%;
+}
