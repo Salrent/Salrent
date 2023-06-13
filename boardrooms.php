@@ -302,7 +302,40 @@ if ($email != false && $password != false) {
   <!-- Content Wrapper. Contains page content -->
   <section class="content">
         <!-- Main row -->
-        <?php
+     
+        <form method="post" action="boardrooms.php">
+        <div class="search-container">
+        <input type="text" name="search" class="form-control search-input" id="search" placeholder="Wprowadź numery sali">
+        <select name="status" class="form-control status-select">
+                <option value="">Wszystkie Statusy Sal</option>
+                <option value="1">Dostępna</option>
+                <option value="0">Niedostępna</option>
+            </select>
+        <button type="submit" class="btn btn-info search-button">Szukaj</button>
+    </div>
+    </form>
+    <style>
+        .status-select {
+            width: auto;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .search-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-input {
+        width: 300px; /* Dostosuj szerokość według preferencji */
+    }
+
+    .search-button {
+        margin-left: 10px; /* Dostosuj margines według preferencji */
+    }
+    </style>
+
+
+<?php
 // Połączenie z bazą danych
 $servername = "localhost";
 $username = "root";
@@ -317,80 +350,109 @@ if ($conn->connect_error) {
 }
 
 // Pobranie danych z bazy
-$sql = "SELECT * FROM sale";
+$searchQuery = isset($_POST['search']) ? $_POST['search'] : '';
+$statusFilter = isset($_POST['status']) ? $_POST['status'] : '';
+
+// Jeśli nie podano żadnego zapytania, pobierz wszystkie sale
+$sql = "SELECT * FROM sale WHERE 1=1"; // Początkowe zapytanie zawsze prawdziwe
+
+// Dodanie warunków do zapytania SQL w zależności od wartości filtrowania
+if ($statusFilter === '1') {
+    $sql .= " AND status = 1";
+} elseif ($statusFilter === '0') {
+    $sql .= " AND status = 0";
+}
+
+if (!empty($searchQuery)) {
+    $searchArray = preg_split('/[, ]+/', $searchQuery); // Podział wprowadzonego ciągu na tablicę numerów sali
+
+    // Generowanie warunku SQL dla każdego numeru sali
+    $conditions = [];
+    foreach ($searchArray as $searchNumber) {
+        $searchNumber = trim($searchNumber); // Usunięcie ewentualnych spacji z numeru sali
+        $conditions[] = "nr = '$searchNumber'";
+    }
+
+    // Połączenie warunków za pomocą operatora OR
+    $conditionsString = implode(' OR ', $conditions);
+
+    $sql .= " AND ($conditionsString)";
+}
+
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Wyświetlanie danych w tabeli z użyciem Bootstrapa
-    echo '<table class="table table-striped">';
-    echo '<thead><tr><th>nr</th><th>pietro</th><th>typ</th><th>miejsca</th><th>status</th></tr></thead>';
-    echo '<tbody>';
-
-    while ($row = $result->fetch_assoc()) {
-        echo '<tr><td>' . $row["nr"] . '</td><td>' . $row["pietro"] . '</td><td>' . $row["typ"] . '</td><td>' . $row["miejsca"] . '</td><td>';
-
-        if ($row["status"] == 1) {
-            echo '<span class="text-success fw-bold">Dostępna</span>';
-        } else {
-            echo '<span class="text-danger fw-bold">Niedostępna</span>';
-        }
-
-        echo '</td></tr>';
-    }
-
-    echo '</tbody>';
-    echo '</table>';
-
-    // Formularz do zmiany wartości
-    echo '<form method="post" action="">
-        <div class="form-group">
-            <label for="selected_room">Wybierz salę:</label>
-            <select class="form-control" name="selected_room">
-                <option value="" disabled selected>Wybierz salę</option>';
-
-    // Pobranie listy sal do wyboru
-    $rooms_sql = "SELECT nr FROM sale";
-    $rooms_result = $conn->query($rooms_sql);
-    while ($room_row = $rooms_result->fetch_assoc()) {
-        echo '<option value="' . $room_row["nr"] . '">' . $room_row["nr"] . '</option>';
-    }
-
-    echo '</select>
-        </div>
-        <div class="form-group">
-            <label for="new_value">Nowy status sali (0(niedostępny) lub 1(dostępny)):</label>
-            <input type="number" class="form-control" name="new_value">
-        </div>
-        <button type="submit" class="btn btn-primary">Zmiana dostępności</button>
-    </form>';
-
+  // Wyświetlanie danych w tabeli z użyciem Bootstrapa
+  echo '<form method="post" action="">'; // Formularz z polem wyboru
+  echo '<button type="submit" class="btn btn-primary" onclick="return confirmRoomStatusChange(this.form)">Zmień status dla zaznaczonych sal</button>';
+  echo '<input type="hidden" id="selectedRooms" name="selected_rooms" value="">'; // Ukryte pole przechowujące numery zaznaczonych sal
+  echo '<div style="overflow-x: auto;">'; // Kontener z obszarem przewijania
+  echo '<table class="table table-striped">';
+  echo '<thead><tr><th><input type="checkbox" id="selectAll" onchange="selectAllCheckboxes()"></th><th>nr</th><th>pietro</th><th>typ</th><th>miejsca</th><th>Status</th><th>Zmiana Statusu</th></tr></thead>';
+  echo '<tbody>';
+  echo '<br>';
     // Obsługa zmiany wartości
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors = array(); // Tablica na błędy
+        $changed_rooms = array(); // Tablica na zmienione sale
 
-        if (isset($_POST["selected_room"]) && !empty($_POST["selected_room"])) {
-            $selected_room = $_POST["selected_room"];
-            $new_value = $_POST["new_value"];
+        if (isset($_POST["selected_rooms"]) && !empty($_POST["selected_rooms"])) {
+            $selected_rooms = $_POST["selected_rooms"];
 
-            // Walidacja nowej wartości
-            if ($new_value === "") {
-                $errors[1] = 'Wprowadź poprawną wartość.';
-            } else if ($new_value != "0" && $new_value != "1") {
-                $errors[2] = 'Podano nieprawidłową wartość. Wprowadź 0 lub 1.';
-            } else {
+            foreach ($selected_rooms as $selected_room) {
+                // Pobranie obecnej wartości statusu
+                $status_sql = "SELECT status FROM sale WHERE nr = '$selected_room'";
+                $status_result = $conn->query($status_sql);
+                $status_row = $status_result->fetch_assoc();
+                $current_status = $status_row["status"];
+
+                // Zmiana statusu na przeciwny
+                $new_status = ($current_status == 1) ? 0 : 1;
+
                 // Aktualizacja wartości w bazie danych dla wybranej sali
-                $update_sql = "UPDATE sale SET status = '$new_value' WHERE nr = '$selected_room'";
-                if ($conn->query($update_sql) === TRUE) {
-                    echo '<div class="alert alert-success" role="alert">Wartość została zaktualizowana pomyślnie.</div>';
-                    echo '<meta http-equiv="refresh" content="0">';
+                $update_sql = "UPDATE sale SET status = '$new_status' WHERE nr = '$selected_room'";
+                if ($conn->query($update_sql) !== TRUE) {
+                    $errors[] = 'Błąd podczas aktualizacji wartości dla sali ' . $selected_room . ': ' . $conn->error;
                 } else {
-                    $errors[3] = 'Błąd podczas aktualizacji wartości: ' . $conn->error;
+                    $changed_rooms[] = $selected_room;
                 }
             }
-        } else {
-            $errors[4] = 'Proszę wybrać poprawną sale oraz wartość.';
+
+            if (empty($errors)) {
+                $changed_rooms_count = count($changed_rooms);
+                $changed_rooms_list = implode(", ", $changed_rooms);
+                $message = "Status został zmieniony dla sal: $changed_rooms_list";
+                echo '<div class="alert alert-success" role="alert">' . $message . '</div>';
+                echo '<meta http-equiv="refresh" content="0">';
+            }
+        } elseif (isset($_POST["selected_room"]) && !empty($_POST["selected_room"])) {
+            $selected_room = $_POST["selected_room"];
+
+            // Pobranie obecnej wartości statusu
+            $status_sql = "SELECT status FROM sale WHERE nr = '$selected_room'";
+            $status_result = $conn->query($status_sql);
+            $status_row = $status_result->fetch_assoc();
+            $current_status = $status_row["status"];
+
+            // Zmiana statusu na przeciwny
+            $new_status = ($current_status == 1) ? 0 : 1;
+
+            // Aktualizacja wartości w bazie danych dla wybranej sali
+            $update_sql = "UPDATE sale SET status = '$new_status' WHERE nr = '$selected_room'";
+            if ($conn->query($update_sql) !== TRUE) {
+                $errors[] = 'Błąd podczas aktualizacji wartości dla sali ' . $selected_room . ': ' . $conn->error;
+            } else {
+                $changed_rooms[] = $selected_room;
+            }
+
+            if (empty($errors)) {
+                $changed_rooms_count = count($changed_rooms);
+                $changed_rooms_list = implode(", ", $changed_rooms);
+                $message = "Status został zmieniony dla sal: $changed_rooms_list";
+                echo '<div class="alert alert-success" role="alert">' . $message . '</div>';
+                echo '<meta http-equiv="refresh" content="0">';
+            }
         }
-        
 
         // Wyświetlanie wszystkich błędów
         if (!empty($errors)) {
@@ -403,20 +465,152 @@ if ($result->num_rows > 0) {
             echo '</div>';
         }
     }
+
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>';
+        echo '<td><input type="checkbox" name="selected_rooms[]" value="' . $row["nr"] . '"></td>'; // Pole wyboru (checkbox)
+        echo '<td>' . $row["nr"] . '</td>';
+        echo '<td>' . $row["pietro"] . '</td>';
+        echo '<td>' . $row["typ"] . '</td>';
+        echo '<td>' . $row["miejsca"] . '</td>';
+        echo '<td>';
+        if ($row["status"] == 1) {
+            echo '<span class="badge badge-success">Dostępna</span>';
+        } else {
+            echo '<span class="badge badge-danger">Niedostępna</span>';
+        }
+        echo '</td>';
+        echo '<td>
+        <button type="button" class="btn btn-sm btn-info" onclick="confirmRoomStatusChange1(\'' . $row["nr"] . '\')">Zmień status</button>
+        <input type="hidden" name="selected_room" value="' . $row["nr"] . '">
+        </td>';
+        echo '</tr>';
+    }
+    echo '</tbody>';
+    echo '</table>';
+    echo '</div>';
+    echo '</form>';
 } else {
-    echo '<div class="alert alert-warning" role="alert">Brak danych w tabeli.</div>';
+    echo '<div class="alert alert-danger" role="alert">Brak wyników spełniających kryteria wyszukiwania.</div>';
 }
 
 $conn->close();
 ?>
+<!-- Poniżej znajduje się pozostała część Twojego kodu HTML i PHP -->
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function selectAllCheckboxes() {
+    var checkboxes = document.getElementsByName('selected_rooms[]');
+    var selectAllCheckbox = document.getElementById('selectAll');
+
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = selectAllCheckbox.checked;
+    }
+  }
+  
+  function confirmRoomStatusChange(form) {
+    event.preventDefault(); // Przechwytuj zdarzenie submit
+    var selectedRooms = document.getElementsByName("selected_rooms[]");
+    var selectedRoomsArray = [];
+
+    for (var i = 0; i < selectedRooms.length; i++) {
+        if (selectedRooms[i].checked) {
+            selectedRoomsArray.push(selectedRooms[i].value);
+        }
+    }
+
+    if (selectedRoomsArray.length === 0 || selectedRoomsArray.length === 1) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Błąd',
+            text: 'Proszę zaznaczyć przynajmniej dwie sale.'
+        });
+        return false;
+    }
+
+    document.getElementById("selectedRooms").value = selectedRoomsArray;
+
+    Swal.fire({
+        icon: 'question',
+        title: 'Potwierdzenie',
+        text: 'Czy na pewno chcesz zmienić status dla zaznaczonych sal: ' + selectedRoomsArray.join(", ") + '?',
+        showCancelButton: true,
+        confirmButtonText: 'Tak',
+        cancelButtonText: 'Nie'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Kontynuuj zapis lub wysłanie formularza
+            form.submit();
+        }
+    });
+}
+
+function confirmRoomStatusChange1(roomNumber) {
+    var selectedRooms = document.getElementsByName("selected_rooms[]");
+    var selectedRoomsArray = [];
+
+    for (var i = 0; i < selectedRooms.length; i++) {
+        if (selectedRooms[i].checked) {
+            selectedRoomsArray.push(selectedRooms[i].value);
+        }
+    }
+
+    if (selectedRoomsArray.length > 0) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Błąd',
+            text: 'Nie można zmienić statusu mając zaznaczone inne sale.'
+        });
+        return false; // Przerwij zapis lub wysłanie formularza
+    }
+
+    Swal.fire({
+        icon: 'question',
+        title: 'Potwierdzenie',
+        text: 'Czy na pewno chcesz zmienić status dla sali ' + roomNumber + '?',
+        showCancelButton: true,
+        confirmButtonText: 'Tak',
+        cancelButtonText: 'Nie'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Utwórz formularz dynamicznie
+            var form = document.createElement('form');
+            form.method = 'post';
+
+            // Dodaj ukryte pole z numerem sali
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'selected_room';
+            input.value = roomNumber;
+            form.appendChild(input);
+
+            // Dodaj formularz do ciała dokumentu
+            document.body.appendChild(form);
+
+            // Wyślij formularz
+            form.submit();
+
+            return true;
+        }
+    });
+}
+</script>
 
 
 
+
+
+
+
+
+
+
+<br><BR><br>
 
         <!-- /.row (main row) -->
   </div><!-- /.container-fluid -->
     <!-- /.content -->
-    <br><Br><br><br><Br><br>
   </section>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
